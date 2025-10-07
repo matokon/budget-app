@@ -4,7 +4,7 @@ export default function Form()
 {
   return (
     <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-100'>
-      <h1 className='text-5xl font-semibold'>Witaj spowrotem!</h1>
+      <h1 className='text-5xl font-semibold'>Witaj ponownie!</h1>
       <p className='font-medium text-lg text-gray-600 mt-4'>Wprowadź swoje dane.</p>
       <div className='mt-8'>
         <label className='text-lg font-medium'>Email: </label>
