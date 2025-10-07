@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 /*testowy przycisk*/
-button{
-    @apply w-full bg-blue-500 text-white font-medium rounded
+/* button{
+    @apply  bg-blue-500 text-white font-medium rounded
     hover:bg-blue-600 active:bg-blue-700 transition-colors;
-}
+} */
 
-*{
+body{
     background-color: #ccccff;
 }
