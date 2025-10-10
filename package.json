@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@tanstack/react-query": "^5.90.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1",
     "react-router-dom": "^7.9.3",
     "recharts": "^3.2.1"
   }

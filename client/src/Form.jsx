@@ -17,7 +17,7 @@ export default function Form()
         <label className='text-lg font-medium'>Hasło: </label>
         <input 
           className='w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent'
-          placeholder='Wprowadź swóje hasło'
+          placeholder='Wprowadź swoje hasło'
           type='password'
         />
       </div>
