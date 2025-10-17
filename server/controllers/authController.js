@@ -1,12 +1,13 @@
 const { signupSchema } = require("../middlewares/validator");
 const User = require("../models/userModel");
-const { hash } = require("../utils/hash");
+const { hash } = require('../utils/hash');
+const { compare } = require('../utils/compare');
+const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Walidacja
     const { error } = signupSchema.validate({ email, password }, { abortEarly: false });
     if (error) {
       return res.status(400).json({
@@ -16,23 +17,18 @@ exports.signup = async (req, res) => {
       });
     }
 
-    // Normalizacja emaila
     const normalizedEmail = String(email).trim().toLowerCase();
 
-    // Duplikat
     const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser) {
       return res.status(409).json({ success: false, message: "User already exists!" });
     }
 
-    // Hash hasła
     const hashedPassword = await hash(password, 12);
 
-    // Zapis (możesz też: const user = await User.create({...}))
     const newUser = new User({ email: normalizedEmail, password: hashedPassword });
     const user = await newUser.save();
 
-    // Odpowiedź (NA `res`, nie na `user/result`)
     return res.status(201).json({
       success: true,
       message: "Your account has been created successfully",
@@ -43,6 +39,47 @@ exports.signup = async (req, res) => {
       return res.status(409).json({ success: false, message: "User already exists!" });
     }
     console.error(err);
+    return res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
+
+exports.signin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: "Email and password are required!" });
+    }
+
+    const normalizedEmail = String(email).trim().toLowerCase();
+
+ 
+    const user = await User.findOne({ email: normalizedEmail }).select("+password");
+    if (!user) {
+      return res.status(401).json({ success: false, message: "Wrong email or password!" });
+    }
+
+    const ok = await compare(password, user.password);
+    if (!ok) {
+      return res.status(401).json({ success: false, message: "Wrong email or password!" });
+    }
+
+    const token = jwt.sign(
+      { sub: user._id.toString(), email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    return res.status(200).json({
+      success: true,
+      message: "Signed in successfully",
+      token,
+      user: { id: user._id, email: user.email },
+    });
+
+  } catch (error) {
+    console.error(error);
     return res.status(500).json({ success: false, message: "Internal server error" });
   }
 };

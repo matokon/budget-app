@@ -1,6 +1,7 @@
-// utils/hash.js
-const bcrypt = require('bcryptjs'); // lub: require('bcrypt')
+const bcrypt = require('bcryptjs');
 
-exports.hash = (value, saltRounds = 12) => {
+function hash(value, saltRounds = 12) {
   return bcrypt.hash(value, saltRounds);
-};
+}
+
+module.exports = { hash };
