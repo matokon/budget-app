@@ -68,7 +68,7 @@ exports.signin = async (req, res) => {
     const token = jwt.sign(
       { sub: user._id.toString(), email: user.email },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "8h" }
     );
 
     return res.status(200).json({
@@ -83,3 +83,32 @@ exports.signin = async (req, res) => {
     return res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
+
+exports.signout = async (req, res)=>{
+    res
+    .clearCookie('Authorization')
+    .status(200)
+    .json({success: true, message: "Logged out successfully"});
+};
+
+exports.sendVerificationCode = async (req, res)=>{
+    const {email} = req.body;
+    try{
+        const existingUser = await User.findOne((email));
+        if(!existingUser){
+            return res
+            .status(404)
+            .json({success: false, message: "User does not exist!"});
+        }
+
+        if(existingUser.verified){
+            return res
+            .status(400)
+            .json({success: false, message: "You are already verified!"});
+        }
+        const codeValue = Math.floor(Math.random() * 1000000).toString();
+        
+    }catch (error){
+        console.log(error);
+    }
+}
