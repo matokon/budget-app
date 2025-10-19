@@ -1,25 +1,25 @@
-##Budget App (WIP)
+## Budget App (WIP)
 
 A lightweight app for tracking personal income and expenses with simple categories and quick summaries.
 Status: work in progress — features, data shapes, and APIs may change before the first stable release.
 
-##Features
+## Features
 
-Implemented / partially implemented
+### Implemented / partially implemented
 
 - **Create budget entries: income and expense.**
 
-User authentication (email/password).
+- **User authentication (email/password).**
 
-Basic categories.
+- **Basic categories.**
 
-Transactions list with running balance and simple totals.
+- **Transactions list with running balance and simple totals.**
 
-Planned (WIP)
+### Planned (WIP)
 
-Edit/delete entries.
+- **Edit/delete entries.**
 
-Charts & dashboard (monthly/yearly).
+- **Charts & dashboard (monthly/yearly).**
 
 ## Tech Stack
 
