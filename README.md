@@ -11,13 +11,13 @@ Status: work in progress — features, data shapes, and APIs may change before t
 
 - **User authentication (email/password).**
 
-- **Basic categories.**
-
 - **Transactions list with running balance and simple totals.**
 
 ### Planned (WIP)
 
 - **Edit/delete entries.**
+
+- **Basic categories.**
 
 - **Charts & dashboard (monthly/yearly).**
 
