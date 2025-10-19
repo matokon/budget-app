@@ -1,13 +1,13 @@
-Budget App (WIP)
+##Budget App (WIP)
 
 A lightweight app for tracking personal income and expenses with simple categories and quick summaries.
 Status: work in progress — features, data shapes, and APIs may change before the first stable release.
 
-Features
+##Features
 
 Implemented / partially implemented
 
-Create budget entries: income and expense.
+- **Create budget entries: income and expense.**
 
 User authentication (email/password).
 
@@ -28,7 +28,7 @@ Charts & dashboard (monthly/yearly).
 [![Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green)](#)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)](#)
 
-- **Languages:** JavaScript (ES202x)  
-- **Frontend:** **React + Vite** (SPA) — `/client`  
-- **Backend:** **Node.js + Express** (REST API) — `/server`  
-- **Database:** **MongoDB** (local or Atlas)
+- **Languages:** JavaScript
+- **Frontend:** **React + Vite** — `/client`  
+- **Backend:** **Node.js + Express** — `/server`  
+- **Database:** **MongoDB** (Atlas)
