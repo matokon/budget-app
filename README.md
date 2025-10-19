@@ -24,11 +24,16 @@ Status: work in progress — features, data shapes, and APIs may change before t
 ## Tech Stack
 
 [![JavaScript](https://img.shields.io/badge/Language-JavaScript-informational)](#)
-[![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue)](#)
-[![Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green)](#)
+[![React + Vite](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue)](#)
+[![Node.js + Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green)](#)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)](#)
+[![HTML](https://img.shields.io/badge/Markup-HTML-orange?logo=html5)](#)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC?logo=tailwindcss&logoColor=white)](#)
 
 - **Languages:** JavaScript
-- **Frontend:** **React + Vite** — `/client`  
-- **Backend:** **Node.js + Express** — `/server`  
+- **Markup:** HTML
+- **Styling:** Tailwind CSS (utility-first)
+- **Frontend:** **React + Vite** — `/client`
+- **Backend:** **Node.js + Express** — `/server`
 - **Database:** **MongoDB** (Atlas)
+
