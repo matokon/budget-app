@@ -32,7 +32,7 @@ Status: work in progress — features, data shapes, and APIs may change before t
 
 - **Languages:** JavaScript
 - **Markup:** HTML
-- **Styling:** Tailwind CSS (utility-first)
+- **Styling:** Tailwind CSS
 - **Frontend:** **React + Vite** — `/client`
 - **Backend:** **Node.js + Express** — `/server`
 - **Database:** **MongoDB** (Atlas)
